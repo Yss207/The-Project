@@ -628,12 +628,24 @@ function calculateQuizScore(quizData) {
     const formData = new FormData(form);
     let score = 0;
     const total = quizData.length;
+    const questionResults = [];
     
+    // Check each question and store results
     quizData.forEach((q, index) => {
         const selected = parseInt(formData.get(`q${index}`));
-        if (selected === q.correct) {
+        const isCorrect = selected === q.correct;
+        
+        if (isCorrect) {
             score++;
         }
+        
+        questionResults.push({
+            question: q.question,
+            selected: selected,
+            correct: q.correct,
+            options: q.options,
+            isCorrect: isCorrect
+        });
     });
     
     const percentage = Math.round((score / total) * 100);
@@ -651,18 +663,64 @@ function calculateQuizScore(quizData) {
     
     const resultsDiv = document.getElementById('quizResults');
     if (resultsDiv) {
-        resultsDiv.style.display = 'block';
-        resultsDiv.innerHTML = `
+        // Build detailed results HTML
+        let resultsHTML = `
             <div class="quiz-score-card">
                 <div class="score-icon">${percentage >= 70 ? '🎉' : '📚'}</div>
                 <h3 class="score-title">Your Score</h3>
                 <div class="score-value">${score}/${total}</div>
                 <div class="score-percentage">${percentage}%</div>
                 <p class="score-feedback">${feedback}</p>
+            </div>
+            <div class="quiz-details-section">
+                <h3 class="quiz-details-title">Question Review</h3>
+                <div class="quiz-questions-review">
+        `;
+        
+        // Add each question result
+        questionResults.forEach((result, index) => {
+            resultsHTML += `
+                <div class="question-review-item ${result.isCorrect ? 'correct' : 'incorrect'}">
+                    <div class="review-question-header">
+                        <span class="review-question-number">Question ${index + 1}</span>
+                        <span class="review-status-icon">${result.isCorrect ? '✓' : '✗'}</span>
+                    </div>
+                    <p class="review-question-text">${result.question}</p>
+                    <div class="review-options">
+                        ${result.options.map((option, optIndex) => {
+                            let optionClass = '';
+                            let optionIcon = '';
+                            
+                            if (optIndex === result.correct) {
+                                optionClass = 'correct-answer';
+                                optionIcon = '✓';
+                            } else if (optIndex === result.selected && !result.isCorrect) {
+                                optionClass = 'wrong-answer';
+                                optionIcon = '✗';
+                            }
+                            
+                            return `
+                                <div class="review-option ${optionClass}">
+                                    <span class="option-icon">${optionIcon}</span>
+                                    <span class="option-text">${option}</span>
+                                    ${optIndex === result.correct ? '<span class="correct-label">Correct Answer</span>' : ''}
+                                    ${optIndex === result.selected && !result.isCorrect ? '<span class="wrong-label">Your Answer</span>' : ''}
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+        });
+        
+        resultsHTML += `
+                </div>
                 <button class="quiz-retry-btn" onclick="location.reload()">Try Again</button>
             </div>
         `;
         
+        resultsDiv.innerHTML = resultsHTML;
+        resultsDiv.style.display = 'block';
         resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
