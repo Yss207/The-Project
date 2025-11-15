@@ -127,8 +127,8 @@ Everything is generated dynamically based on the selected simulation.
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/visualizeit.git
-cd visualizeit
+git clone https://github.com/Yss207/The-Project
+cd The-Project
 ```
 
 ### Run the Project
