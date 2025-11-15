@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Details - VisualizeIT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">VisualizeIT</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown-trigger">
+                    <a href="#simulations" class="nav-link">Simulations <span class="dropdown-arrow">▼</span></a>
+                    <div class="mega-dropdown">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <h3 class="dropdown-year">1st Year</h3>
+                                <ul class="dropdown-list">
+                                    <li><a href="#">Engineering Mathematics</a></li>
+                                    <li><a href="#">Physics Fundamentals</a></li>
+                                    <li><a href="#">Chemistry Basics</a></li>
+                                    <li><a href="#">Programming Basics</a></li>
+                                    <li><a href="#">Engineering Drawing</a></li>
+                                    <li><a href="#">Workshop Practice</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3 class="dropdown-year">2nd Year</h3>
+                                <ul class="dropdown-list">
+                                    <li><a href="#">Data Structures</a></li>
+                                    <li><a href="#">Digital Electronics</a></li>
+                                    <li><a href="#">Circuit Analysis</a></li>
+                                    <li><a href="#">Signals & Systems</a></li>
+                                    <li><a href="#">Microprocessors</a></li>
+                                    <li><a href="#">Object-Oriented Programming</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3 class="dropdown-year">3rd Year</h3>
+                                <ul class="dropdown-list">
+                                    <li><a href="#">Computer Networks</a></li>
+                                    <li><a href="#">Database Systems</a></li>
+                                    <li><a href="#">Operating Systems</a></li>
+                                    <li><a href="#">Machine Learning</a></li>
+                                    <li><a href="#">Embedded Systems</a></li>
+                                    <li><a href="#">Software Engineering</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3 class="dropdown-year">4th Year</h3>
+                                <ul class="dropdown-list">
+                                    <li><a href="#">Cloud Computing</a></li>
+                                    <li><a href="#">Cybersecurity</a></li>
+                                    <li><a href="#">IoT Systems</a></li>
+                                    <li><a href="#">AI & Deep Learning</a></li>
+                                    <li><a href="#">Blockchain Technology</a></li>
+                                    <li><a href="#">Project Management</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Simulation Details Layout -->
+    <div class="simulation-details-wrapper">
+        <!-- Left Sidebar Navigation -->
+        <aside class="simulation-sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title" id="simulationTitle">Simulation</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="sidebar-nav-item active" data-section="overview">
+                    <span class="nav-item-icon">📋</span>
+                    <span class="nav-item-text">Overview</span>
+                    <div class="nav-item-indicator"></div>
+                </button>
+                <button class="sidebar-nav-item" data-section="objective">
+                    <span class="nav-item-icon">🎯</span>
+                    <span class="nav-item-text">Objective</span>
+                    <div class="nav-item-indicator"></div>
+                </button>
+                <button class="sidebar-nav-item" data-section="topics">
+                    <span class="nav-item-icon">📚</span>
+                    <span class="nav-item-text">Topics Covered</span>
+                    <div class="nav-item-indicator"></div>
+                </button>
+                <button class="sidebar-nav-item" data-section="simulation">
+                    <span class="nav-item-icon">⚡</span>
+                    <span class="nav-item-text">Simulation</span>
+                    <div class="nav-item-indicator"></div>
+                </button>
+                <button class="sidebar-nav-item" data-section="quiz">
+                    <span class="nav-item-icon">✏️</span>
+                    <span class="nav-item-text">Quiz</span>
+                    <div class="nav-item-indicator"></div>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Right Content Panel -->
+        <main class="simulation-content">
+            <!-- Overview Section -->
+            <section class="content-section active" id="overview-section">
+                <div class="content-header">
+                    <h1 class="content-title">Overview</h1>
+                </div>
+                <div class="content-body">
+                    <div class="intro-text" id="overviewText">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Objective Section -->
+            <section class="content-section" id="objective-section">
+                <div class="content-header">
+                    <h1 class="content-title">Learning Objectives</h1>
+                </div>
+                <div class="content-body">
+                    <div class="objective-list" id="objectiveText">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Topics Covered Section -->
+            <section class="content-section" id="topics-section">
+                <div class="content-header">
+                    <h1 class="content-title">Topics Covered</h1>
+                </div>
+                <div class="content-body">
+                    <div class="topics-list" id="topicsText">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simulation Section -->
+            <section class="content-section" id="simulation-section">
+                <div class="content-header">
+                    <h1 class="content-title">Interactive Simulation</h1>
+                </div>
+                <div class="content-body">
+                    <div class="simulation-container" id="simulation-container">
+                        <div class="simulation-placeholder">
+                            <div class="placeholder-icon">⚡</div>
+                            <h3 class="placeholder-title">Simulation Environment</h3>
+                            <p class="placeholder-text">The interactive simulation will load here. Use the controls below to interact with the visualization.</p>
+                            <div class="simulation-controls">
+                                <button class="control-btn">Start Simulation</button>
+                                <button class="control-btn secondary">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Section -->
+            <section class="content-section" id="quiz-section">
+                <div class="content-header">
+                    <h1 class="content-title">Quick Concept Check</h1>
+                </div>
+                <div class="content-body">
+                    <div class="quiz-container" id="quizContainer">
+                        <!-- Quiz will be populated by JavaScript -->
+                    </div>
+                    <div class="quiz-results" id="quizResults" style="display: none;">
+                        <!-- Results will be shown here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">VisualizeIT</h3>
+                    <p class="footer-tagline">
+                        Interactive Engineering Simulations for Modern Learning
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="subjects.html">Subjects</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 VisualizeIT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="simulation-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisualizeIT - Interactive Engineering Simulations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">VisualizeIT</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown-trigger">
+                    <a href="#simulations" class="nav-link">Simulations <span class="dropdown-arrow">▼</span></a>
+                    <div class="mega-dropdown">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <h3 class="dropdown-year">1st Year</h3>
+                                <ul class="dropdown-list">
+                                    <li><a href="#">Engineering Mathematics</a></li>
+                                    <li><a href="#">Physics Fundamentals</a></li>
+                                    <li><a href="#">Chemistry Basics</a></li>
+                                    <li><a href="#">Programming Basics</a></li>
+                                    <li><a href="#">Engineering Drawing</a></li>
+                                    <li><a href="#">Workshop Practice</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3 class="dropdown-year">2nd Year</h3>
+                                <ul class="dropdown-list">
+                                    <li><a href="#">Data Structures</a></li>
+                                    <li><a href="#">Digital Electronics</a></li>
+                                    <li><a href="#">Circuit Analysis</a></li>
+                                    <li><a href="#">Signals & Systems</a></li>
+                                    <li><a href="#">Microprocessors</a></li>
+                                    <li><a href="#">Object-Oriented Programming</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3 class="dropdown-year">3rd Year</h3>
+                                <ul class="dropdown-list">
+                                    <li><a href="#">Computer Networks</a></li>
+                                    <li><a href="#">Database Systems</a></li>
+                                    <li><a href="#">Operating Systems</a></li>
+                                    <li><a href="#">Machine Learning</a></li>
+                                    <li><a href="#">Embedded Systems</a></li>
+                                    <li><a href="#">Software Engineering</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3 class="dropdown-year">4th Year</h3>
+                                <ul class="dropdown-list">
+                                    <li><a href="#">Cloud Computing</a></li>
+                                    <li><a href="#">Cybersecurity</a></li>
+                                    <li><a href="#">IoT Systems</a></li>
+                                    <li><a href="#">AI & Deep Learning</a></li>
+                                    <li><a href="#">Blockchain Technology</a></li>
+                                    <li><a href="#">Project Management</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="particleCanvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Don't Just Think, VisualizeIT</span>
+                    <!-- <span class="title-line">Interactive Engineering</span> -->
+                    <!-- <span class="title-line highlight">Simulations</span> -->
+                </h1>
+                <p class="hero-subtitle">
+                    Experience engineering concepts like never before. Interactive 3D simulations, 
+                    real-time visualizations, and immersive learning experiences that bring 
+                    complex theories to life.
+                </p>
+                <a href="#simulations" class="cta-button">
+                    <span>Explore Simulations</span>
+                    <div class="button-glow"></div>
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">Choose Your Topic</h3>
+                    <p class="card-description">
+                        Browse through our extensive library of engineering simulations 
+                        organized by year and subject.
+                    </p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">Interactive Learning</h3>
+                    <p class="card-description">
+                        Engage with 3D models, manipulate parameters in real-time, 
+                        and see immediate visual feedback.
+                    </p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">📊</div>
+                    <h3 class="card-title">Visualize Concepts</h3>
+                    <p class="card-description">
+                        Complex engineering principles become clear through 
+                        stunning visualizations and animations.
+                    </p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">🚀</div>
+                    <h3 class="card-title">Master Skills</h3>
+                    <p class="card-description">
+                        Practice, experiment, and master engineering concepts 
+                        through hands-on interactive experiences.
+                    </p>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">About VisualizeIT</h2>
+
+        <div class="about-content">
+            <div class="about-text">
+                <h3 class="about-heading">Engineering Concepts, Reimagined</h3>
+
+                <p class="about-paragraph">
+                    VisualizeIT turns complex engineering topics into clean, interactive visuals—helping students
+                    understand faster, deeper, and smarter. No more overthinking dense theory. Experience concepts
+                    the way they were meant to be learned: visually.
+                </p>
+
+                <p class="about-paragraph">
+                    Whether you're revising the basics or exploring advanced ideas, VisualizeIT adapts to your pace
+                    with modern, immersive simulations built for real engineering curricula.
+                </p>
+
+            </div>
+
+            <div class="about-visual">
+                <div class="geometric-art">
+                    <div class="geo-shape shape-1"></div>
+                    <div class="geo-shape shape-2"></div>
+                    <div class="geo-shape shape-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Simulation Modules Grid -->
+    <section id="simulations" class="simulations">
+        <div class="container">
+            <h2 class="section-title">Featured Simulations</h2>
+            <div class="simulations-grid">
+                <a href="topics.html?subject=DSA" class="sim-card-link">
+                    <div class="sim-card">
+                        <div class="sim-icon">📚</div>
+                        <h3 class="sim-title">DSA</h3>
+                        <p class="sim-description">
+                            Data Structures and Algorithms with interactive visualizations.
+                        </p>
+                        <div class="sim-glow"></div>
+                    </div>
+                </a>
+                <a href="topics.html?subject=Logic%20Design%20%26%20Computer%20Organization" class="sim-card-link">
+                    <div class="sim-card">
+                        <div class="sim-icon">🔧</div>
+                        <h3 class="sim-title">Logic Design & CO</h3>
+                        <p class="sim-description">
+                            Logic gates, K-Maps, and computer organization concepts.
+                        </p>
+                        <div class="sim-glow"></div>
+                    </div>
+                </a>
+                <a href="topics.html?subject=Discrete Mathematics" class="sim-card-link">
+                    <div class="sim-card">
+                        <div class="sim-icon">🔢</div>
+                        <h3 class="sim-title">Discrete Mathematics</h3>
+                        <p class="sim-description">
+                            Sets, relations, graph theory, and combinatorial problems.
+                        </p>
+                        <div class="sim-glow"></div>
+                    </div>
+                </a>
+                <a href="topics.html?subject=Operating Systems" class="sim-card-link">
+                    <div class="sim-card">
+                        <div class="sim-icon">⚙️</div>
+                        <h3 class="sim-title">Operating Systems</h3>
+                        <p class="sim-description">
+                            CPU scheduling, memory management, and synchronization.
+                        </p>
+                        <div class="sim-glow"></div>
+                    </div>
+                </a>
+                <a href="topics.html?subject=DBMS" class="sim-card-link">
+                    <div class="sim-card">
+                        <div class="sim-icon">💾</div>
+                        <h3 class="sim-title">DBMS</h3>
+                        <p class="sim-description">
+                            Database design, normalization, and SQL query execution.
+                        </p>
+                        <div class="sim-glow"></div>
+                    </div>
+                </a>
+                <a href="topics.html?subject=Computer Graphics" class="sim-card-link">
+                    <div class="sim-card">
+                        <div class="sim-icon">🎨</div>
+                        <h3 class="sim-title">Computer Graphics</h3>
+                        <p class="sim-description">
+                            Transformations, projections, and rendering techniques.
+                        </p>
+                        <div class="sim-glow"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">VisualizeIT</h3>
+                    <p class="footer-tagline">
+                        Interactive Engineering Simulations for Modern Learning
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#simulations">Simulations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 VisualizeIT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <span class="scroll-arrow-up">↑</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
